@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    margin-bottom: 0;
+  }
+  
+  .topo-fixo {
+    background-color: #250B5B;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    height: 70px;
+  }
+  
+  .topo-fixo img {
+    width: 140px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .topo-fixo nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .topo-fixo nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .topo-fixo nav ul li a:hover {
+    transform: scale(1.2);
+    color: #000000;
+  }
+  
+  header section {
+    background-color: #DEDAFF;
+    padding: 40px;
+    margin-top: 70px;
+  }
+  
+  h1 {
+    font-size: xx-large;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+  }
+  
+  h2 {
+    font-size: x-large;
+    font-weight: 700;
+    margin: 30px;
+  }
+  
+  main ol li {
+    font-size: large;
+  }
+  
+  h3 {
+    font-size: x-large;
+    font-weight: 700;
+    margin: 30px;
+    color: #8F7FEE;
+  }
+  
+  .conteudo {
+    padding: 120px 20px 40px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #250B5B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .redes a img {
+    width: 40px;
+    height: 40px;
+  }
+  

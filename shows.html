@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shows</title>
+  <link rel="stylesheet" href="shows.css" />
+</head>
+<body>
+
+  <header>
+    <img src="imagens/logo.png" alt="logo">
+    <nav>
+      <ul>
+        <li><a href="pagina_principal.html">Página Principal</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="novidades.html">Novidades</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="promocoes">
+      <div class="titulo">PROMOÇÕES</div>
+      <div class="carousel-container">
+        <div class="arrow" id="prev">&#10094;</div>
+        <div class="carousel">
+          <div class="carousel-inner" id="carouselInner">
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/olivia.jpg" alt="Promoção Olivia"></a></div>
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/taylor.jpg" alt="Promoção Taylor"></a></div>
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/thewe.jpg" alt="Promoção The Weeknd"></a></div>
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/sabrina.jpg" alt="Promoção Sabrina"></a></div>
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/bruno.jpg" alt="Promoção Bruno"></a></div>
+            <div class="carousel-item"><a href="ingresso.html"><img src="imagens/camila.jpg" alt="Promoção Camila"></a></div>
+          </div>
+        </div>
+        <div class="arrow" id="next">&#10095;</div>
+      </div>
+    </section>
+
+    <section class="shows">
+      <div class="titulo">PRÓXIMOS SHOWS</div>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/6.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/5.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/3.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/4.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/1.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+
+      <a href="ingresso.html" style="text-decoration: none;">
+        <div class="banner-final-imagem" style="background-image: url('imagens/2.png');">
+          <div class="banner-conteudo"></div>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const carouselInner = document.getElementById('carouselInner');
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    function getItemWidth() {
+      return items[0].offsetWidth + 20;
+    }
+
+    function updateCarousel() {
+      const offset = -currentIndex * getItemWidth();
+      carouselInner.style.transform = `translateX(${offset}px)`;
+    }
+
+    function loopNext() {
+      const visibleItems = Math.floor(document.querySelector('.carousel').offsetWidth / getItemWidth());
+      currentIndex = (currentIndex + 1) % (totalItems - visibleItems + 1);
+      updateCarousel();
+    }
+
+    let autoLoop = setInterval(loopNext, 3000);
+
+    prev.addEventListener('click', () => {
+      const visibleItems = Math.floor(document.querySelector('.carousel').offsetWidth / getItemWidth());
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - visibleItems;
+      updateCarousel();
+    });
+
+    next.addEventListener('click', () => {
+      loopNext();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+  background-color: #250B5B;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  height: 70px;
+}
+
+header img {
+  width: 140px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  transform: scale(1.2);
+  color: #000000;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.menu img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.eventos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 10%;
+  background-color: #6631d7;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+}
+
+.destaques {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6b44bb;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.evento {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.evento img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.evento p {
+  font-size: 1em;
+  font-weight: bold;
+  color: #250B5B;
+}
+
+.patrocinadores {
+  padding: 80px 10% 150px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+}
+
+.patrocinadores h2 {
+  font-size: 2em;
+  color: #250B5B;
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+  position: relative;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  image-rendering: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Parte para deixar o meio da página branca */
+.frase-centro {
+  background-color: #ffffff; /* Define o fundo branco */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.frase-centro h2 {
+  font-size: 2.5em;
+  color: #250B5B;
+  margin-bottom: 20px;
+}
+
+.frase-centro p {
+  font-size: 1.1em;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escolha seu Setor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    }
+
+    header {
+      background-color: #250B5B;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      height: 70px;
+    }
+
+    header img {
+      width: 140px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      transform: scale(1.2);
+      color: #000000;
+    }
+
+    main {
+      padding: 40px 20px;
+      margin-top: 80px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .titulo {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 30px 0 20px;
+      color: #333;
+      border-bottom: 2px solid #250B5B;
+      padding-bottom: 8px;
+      text-align: center;
+    }
+
+    .setores {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .setores img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .setores button {
+      display: block;
+      margin: 5px 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 220px;
+    }
+
+    .setores .premium { background-color: #DDB3E1; }
+    .setores .pista { background-color: #F6B460; }
+    .setores .inf-leste { background-color: #F2A0B5; }
+    .setores .inf-oeste { background-color: #BCE1FA; }
+    .setores .sup-leste { background-color: #EA8E8E; }
+    .setores .sup-oeste { background-color: #C6E0C3; }
+
+    .formulario {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .formulario label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .formulario input, .formulario select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .formulario .quantidade {
+      display: flex;
+      gap: 8px;
+    }
+
+    .formulario .quantidade input {
+      width: 40px;
+      text-align: center;
+    }
+
+    .comprar-btn {
+      background-color: #10204B;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .comprar-btn:hover {
+      background-color: #1d3170;
+    }
+
+    .setor-selecionado {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .setor-selecionado span {
+      padding: 5px 12px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .destaque {
+      font-size: 36px;
+      color: #1C2D88;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<body>
+  <header>
+    <img src="imagens/logo.png" alt="logo">
+    <nav>
+      <ul>
+        <li><a href="pagina_principal.html">Página Principal</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="novidades.html">Novidades</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="ingresso.html">Ingresso</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <div class="titulo">ESCOLHA SEU SETOR</div>
+
+  <div class="setores" style="flex-direction: row; justify-content: center; gap: 40px;">
+    <img src="https://theerastourbr.taylorswift.com.br/wp-content/uploads/2023/06/FxoS6B_XoAILbGg-819x1024.jpeg" alt="Mapa de Setores" style="max-width: 320px; height: auto;">
+  
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+      <button class="premium" onclick="selecionarSetor('Pista Premium', '#DDB3E1')">Pista Premium</button>
+      <button class="pista" onclick="selecionarSetor('Pista', '#F6B460')">Pista</button>
+      <button class="inf-leste" onclick="selecionarSetor('Cadeira Inferior Leste', '#F2A0B5')">Cadeira Inferior Leste</button>
+      <button class="inf-oeste" onclick="selecionarSetor('Cadeira Inferior Oeste', '#BCE1FA')">Cadeira Inferior Oeste</button>
+      <button class="sup-leste" onclick="selecionarSetor('Cadeira Superior Leste', '#EA8E8E')">Cadeira Superior Leste</button>
+      <button class="sup-oeste" onclick="selecionarSetor('Cadeira Superior Oeste', '#C6E0C3')">Cadeira Superior Oeste</button>
+    </div>
+  </div>
+
+  <form class="formulario">
+    <div class="setor-selecionado">
+      <label>SETOR SELECIONADO:</label>
+      <span id="setor" style="background-color: #ccc;">Nenhum</span>
+    </div>
+
+    <label>QUANTIDADE DE INGRESSOS</label>
+    <div class="quantidade">
+      <input type="number" min="1" value="1">
+    </div>
+
+    <label>SEU NOME</label>
+    <input type="text">
+
+    <label>CPF</label>
+    <input type="text">
+
+    <label>DATA DE NASCIMENTO</label>
+    <input type="date">
+
+    <label>ENDEREÇO</label>
+    <input type="text">
+
+    <label>FORMA DE PAGAMENTO</label>
+    <select>
+      <option>Cartão de Crédito</option>
+      <option>Pix</option>
+      <option>Boleto</option>
+    </select>
+
+    <button type="button" class="comprar-btn">COMPRAR</button>
+  </form>
+</main>
+
+<script>
+  function selecionarSetor(setor, cor) {
+    document.getElementById('setor').innerText = setor;
+    document.getElementById('setor').style.backgroundColor = cor;
+  }
+
+  document.querySelector('.comprar-btn').addEventListener('click', function () {
+    window.location.href = 'sucesso.html';
+  });
+</script>
+
+</body>
+</html>
